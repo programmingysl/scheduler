@@ -16,7 +16,22 @@ class EventsController extends Controller
     //
 
     public function index(){
-         return view('events');
+
+        $events = Events::get();
+        $event_list = [];
+        foreach ($events as $key => $event) {
+
+            $event_list[] = Calendar::event(
+                $event->event_name,
+                true,
+                new \DateTime($event->start_date),
+                new \DateTime($event->end_date . ' +1 day')
+            );
+        }
+
+        $calendar_details = Calendar::addEvents($event_list);
+
+        return view('events', compact('calendar_details'));
     }
 
     public function addEvent(Request $request){
