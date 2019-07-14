@@ -6,10 +6,34 @@
 
 <link href="{{asset('css/app.css')}}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css" />
-<div class="container">
-    <div class="panel panel-primary">
 
-        <div class="panel-heading">Event Calendar</div>
+<nav class="navbar navbar-expand-md navbar-light navbar-laravel mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            Event Scheduler
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link">Laurent Elbaz</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="container mb-4">
+    <div class="panel panel-primary">
 
         <div class="panel-body">
 
@@ -68,24 +92,31 @@
             </div>
             {!! Form::close() !!}
 
+
+
         </div>
     </div>
+
+
+
+    <script src="{{asset('js/app.js')}}"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.js"></script>
+    <link rel="stylesheet" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css"/>
+
+    {!! $calendar_details->calendar() !!}
+    {!! $calendar_details->script() !!}
+
+
 </div>
 
 
-<script src="{{asset('js/app.js')}}"></script>
-<script src="http://code.jquery.com/jquery.js"></script>
-<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-
-
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
-
-{!! $calendar_details->calendar() !!}
-{!! $calendar_details->script() !!}
